@@ -1,0 +1,27 @@
+{
+    "ABC": {
+        "$message": "There is an abc error occurred somewhere",
+        "$status": 500,
+        "USER": {
+            "$message": "There is an error occured during user action.",
+            "MISSING": {
+                "$status": 404,
+                "$message": "User is not found by id {userId}"
+            },
+            "NEW": {
+                "$message": "There is an user registration error.",
+                "$status": 400,
+                "NAME": {
+                    "$message": "User name '{userName}' is invalid.",
+                    "EMPTY": "User cannot be empty."
+                },
+                "PWD": {
+                    "$message": "User name '{userName}' is invalid.",
+                    "EMPTY": "Password cannot be empty.",
+                    "WEAK": "Password is too weak. Should be at least {minLength} length"
+                },
+                "DUPL": "Duplicate user name '{userName}'"
+            }
+        }
+    }
+}
