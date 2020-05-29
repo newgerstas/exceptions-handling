@@ -37,11 +37,8 @@ namespace ExceptionStrategy
             {
                 app.UseDeveloperExceptionPage();
             }
-            //else
-            {
-                // add middleware as a global exception handler for higher environments
-                app.UseMiddleware<ExceptionHandlerMiddleware>();
-            }
+
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
 
